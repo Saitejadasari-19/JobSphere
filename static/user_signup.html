@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user_signup/UserSignUpvars.css">
+  <link rel="stylesheet" href="user_signup/UserSignUpstyle.css">
+  <style>
+    button{
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+<div class="company-signup">
+  <div class="landing-page-sign-up-desktop">
+    <div class="frame-1284">
+      <div class="sign-up-options">
+        <div class="tab-menu">
+          <div class="caption">Job Seeker</div>
+        </div>
+        <!-- <div class="tab-menu2">
+          <div class="caption2">Company</div>
+        </div> -->
+        <button type="button" class="caption2 tab-menu2" onclick="route()">Company</button>
+      </div>
+      <div class="get-more-opportunities">Get more opportunities</div>
+      <!-- <div class="button">
+        <img class="icon" src="user_signup/icon0.svg" />
+        <div class="caption3">Sign Up with Google</div>
+      </div> -->
+    </div>
+    <!-- <div class="or-sign-up-with-email">
+      <div class="line"></div>
+      <div class="line2"></div>
+      <div class="or-sign-up-with-email2">Or sign up with email</div>
+    </div> -->
+
+    <form class="forms">
+      <div class="textfield">
+        <label for="full-name" class="label">Full name</label>
+        <input type="text" id="full-name" class="input this-is-placeholder" placeholder="Enter your full name" required />
+      </div>
+      <div class="textfield">
+        <label for="user-name" class="label">User name</label>
+        <input type="text" id="user-name" class="input this-is-placeholder" placeholder="Enter username" required />
+      </div>
+      <div class="textfield">
+        <label for="email" class="label">Email Address</label>
+        <input type="email" id="email" class="input this-is-placeholder" placeholder="Enter email address" required />
+      </div>
+      <div class="textfield">
+        <label for="password" class="label">Password</label>
+        <input type="password" id="password" class="input this-is-placeholder" placeholder="Enter password" required />
+      </div>
+      <button type="submit" class="caption4 button2" onclick="signup(event)">Continue</button>
+    </form>
+
+    <div class="already-have-an-account">
+      <div class="already-have-an-account2">Already have an account?</div>
+      <div class="login" style="text-decoration: none;" onclick="routeToLogin()">Login</div>
+    </div>
+    <div
+      class="by-clicking-continue-you-acknowledge-that-you-have-read-and-accept-the-terms-of-service-and-privacy-policy"
+    >
+      <span>
+        <span
+          class="by-clicking-continue-you-acknowledge-that-you-have-read-and-accept-the-terms-of-service-and-privacy-policy-span"
+        >
+          By clicking &#039;Continue&#039;, you acknowledge that you have read
+          and accept the
+        </span>
+        <span
+          class="by-clicking-continue-you-acknowledge-that-you-have-read-and-accept-the-terms-of-service-and-privacy-policy-span2"
+        >
+          Terms of Service
+        </span>
+        <span
+          class="by-clicking-continue-you-acknowledge-that-you-have-read-and-accept-the-terms-of-service-and-privacy-policy-span3"
+        >
+          and
+        </span>
+        <span
+          class="by-clicking-continue-you-acknowledge-that-you-have-read-and-accept-the-terms-of-service-and-privacy-policy-span4"
+        >
+          Privacy Policy.
+        </span>
+      </span>
+    </div>
+  </div>
+  <div class="rectangle"></div>
+  <div class="frame-3">
+    <div class="ellipse-2"></div>
+    <img class="vector-7" src="user_signup/vector-70.svg" />
+    <div class="search">
+      <img class="iconly-bold-search" src="user_signup/iconly-bold-search0.svg" />
+    </div>
+  </div>
+  <div class="job-sphere">JobSphere</div>
+</div>
+
+<script>
+
+  function routeToLogin(){
+    window.location.href='/userLogin?view=html'
+  }
+  function route()
+  {
+    window.location.href='/companysignup?view=html';
+  }
+
+  function signup(event){
+    event.preventDefault();
+
+    const username = document.getElementById('user-name').value;
+    const fullname = document.getElementById('full-name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    console.log(username);
+
+    const userData={
+      username:username,
+      fullname: fullname,
+      email:email,
+      password:password
+    };
+
+    fetch('/userSignup',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    })
+    .then(response=>response.json())
+    .then(data => {
+      if(data.success){
+        window.location.href='/settings?view=html';
+    }else{
+      alert('Signup failed:' +data.message);
+    }
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error during signup:',error);
+
+  });
+
+}
+</script>
+</body>
+</html>

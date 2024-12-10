@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/user_apply/Applystyle.css" />
+    <link rel="stylesheet" href="/user_apply/Applyvars.css" />
+    <title>Job Details</title>
+</head>
+<body>
+    <div class="landing-page-submit-application-desktop">
+        <div class="base"></div>
+        <div class="input-fields">
+            <div class="role">
+                <!-- <div class="company-logo">
+                    <div class="base2"></div>
+                    <div class="nomad">
+                        <img class="group" src="/user_apply/group0.svg" />
+                    </div>
+                </div> -->
+                <div class="job-title">
+                    <div class="social-media-assistant" id="job-title">Loading...</div>
+                    <div class="frame">
+                        <div class="nomad2" id="company-name">Loading...</div>
+                        <div class="ellipse-4"></div>
+                        <div class="paris-france" id="location">Loading...</div>
+                        <div class="ellipse-5"></div>
+                        <div class="full-time" id="work-type">Loading...</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Other fields here, just like in your form -->
+            <div class="divider"></div>
+    <div class="submit-your-application">
+      <div class="submit-your-application2">Submit your application</div>
+      <div id="info" class="the-following-is-required-and-will-only-be-shared-with-nomad">
+        The following is required and will only be shared with Nomad
+      </div>
+    </div>
+    <form id="application-form" class="form">
+      <!-- Email Address Field -->
+      <div class="textfield">
+        <label for="email" class="label">Email address</label>
+        <!-- <div class="input"> -->
+          <input class="input" type="email" id="email" name="email" placeholder="Enter your email address" required />
+        <!-- </div> -->
+      </div>
+    
+      <!-- Phone Number Field -->
+      <div class="textfield">
+        <label for="phone" class="label">Phone number</label>
+        <!-- <div class="input"> -->
+          <input class="input" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+        <!-- </div> -->
+      </div>
+    
+      <!-- Job Title Field -->
+      <div class="textfield">
+        <label for="jobTitle" class="label">Current or previous job title</label>
+        <!-- <div class="input"> -->
+          <input class="input" type="text" id="jobTitle" name="jobTitle" placeholder="What’s your current or previous job title?" required />
+        <!-- </div> -->
+      </div>
+    
+      <div class="divider"></div>
+    
+      <!-- Portfolio URL Field -->
+      <div class="textfield">
+        <label for="portfolio" class="label">Portfolio URL</label>
+        <!-- <div class="input"> -->
+          <input class="input" type="url" id="portfolio" name="portfolio" placeholder="Link to your portfolio URL" required/>
+        <!-- </div> -->
+      </div>
+    
+      <div class="divider"></div>
+    
+      <!-- Resume Attachment Field -->
+      <div class="textfield2">
+        <label for="resume" class="attach-your-resume">Attach your resume</label>
+        <!-- <div class="form-attach"> -->
+          <input class="form-attach" type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.rtf" />
+          <!-- <div class="attach-resume-cv">Attach Resume/CV</div> -->
+        <!-- </div> -->
+      </div>
+      <div class="divider"></div>
+      <!-- Submit Button -->
+      <div class="textfield">
+        <button class="caption button" type="submit" onclick="application(event)">Submit</button>
+      </div>
+    </form>
+    
+    
+    <!-- <div class="button">
+      <div class="caption">Submit Application</div>
+    </div> -->
+    <div
+      class="by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy">
+      <span>
+        <span
+          class="by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span">
+          By sending the request you can confirm that you accept our
+        </span>
+        <span
+          class="by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span2">
+          Terms of Service
+        </span>
+        <span
+          class="by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span3"
+        >
+          and
+        </span>
+        <span
+          class="by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span4"
+        >
+          Privacy Policy
+        </span>
+      </span>
+    </div>
+
+        </div>
+    </div>
+
+    <script>
+      function application(event) {
+        // Prevent form from submitting normally
+        event.preventDefault();
+    
+        // Create a new FormData object to gather all form data, including file input
+        const formData = new FormData();
+    
+        // Get values from the form fields
+        const email = document.getElementById('email').value;
+        const jobTitle = document.getElementById('jobTitle').value;
+        const portfolio = document.getElementById('portfolio').value;
+        const resume = document.getElementById('resume').files[0];
+        const num = document.getElementById('phone').value;
+    
+        // Append data to FormData object
+        formData.append('email', email);
+        formData.append('jobTitle', jobTitle);
+        formData.append('portfolio', portfolio);
+        formData.append('resume', resume);
+        
+        const pathParts = window.location.pathname.split('/');
+        const jobId = pathParts[pathParts.length - 1];
+      
+        fetch(`/apply/${jobId}`, {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => response.json()) 
+        .then(data => {
+          if (data.success) {
+            // alert(data.message); 
+            window.location.href='/dashboard?view=html' 
+          } else {
+            alert('Something went wrong. Please try again later.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while submitting the application.');
+        });
+      }
+        document.addEventListener("DOMContentLoaded", async function() {
+            const pathParts = window.location.pathname.split('/');
+            const jobId = pathParts[pathParts.length - 1];
+            console.log(jobId)
+            try {
+                const response = await fetch(`api/${jobId}`);
+                if (!response.ok) throw new Error("Job not found");
+    
+                const job = await response.json();
+                console.log(job)
+                // Displays the job data
+                document.getElementById("job-title").textContent = job.jobTitle;
+                document.getElementById("company-name").textContent = `Company: ${job.companyName}`;
+                document.getElementById("location").textContent = `Location: ${job.location}`;
+                document.getElementById("work-type").textContent = `Work Type: ${job.workType}`;
+
+                document.getElementById("job-title").textContent = job.jobTitle;
+                document.getElementById("company-name").textContent = job.companyName;
+                document.getElementById("location").textContent = job.location;
+                document.getElementById("work-type").textContent = job.workType;
+                document.getElementById("info").textContent = `The following is required and will only be shared with ${job.companyName}`;
+            } catch (error) {
+                console.error("Error fetching job:", error);
+                document.getElementById("job-details").innerHTML = "<p>Job not found.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

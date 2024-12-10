@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/company_applicantslist/vars.css">
+  <link rel="stylesheet" href="/company_applicantslist/style.css">
+
+  <style>
+    button{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="_3-10-dashboard-company-applicants-table-view">
+  <div class="group-1027">
+    <div class="side-bar-dashboard-company">
+      <div class="menu">
+        <div class="logo-2">
+          <div class="frame-3">
+            <div class="ellipse-2"></div>
+            <img class="vector-7" src="/company_applicantslist/vector-70.svg" />
+            <div class="search">
+              <img class="iconly-bold-search" src="/company_applicantslist/iconly-bold-search0.svg" />
+            </div>
+          </div>
+          <div class="job-huntly">JobSphere</div>
+        </div>
+        <div class="main-menu">
+          <div class="menu2">
+            <div class="sidebar-menu">
+              <img class="icon" src="/company_applicantslist/icon0.svg" />
+              <a class="caption" style="text-decoration: none; cursor:pointer" onclick="routeToProfile()">My Profile</a>
+            </div>
+            <div class="sidebar-menu2">
+              <img class="icon2" src="/company_applicantslist/icon1.svg" />
+              <a class="caption" style="text-decoration: none;">All Applicants</a>
+            </div>
+          </div>
+          <div class="rectangle-2751"></div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="top-nav">
+      <div class="job-list">
+        <div class="company-logo">
+          <div class="base"></div>
+        </div>
+        <div class="job-title">
+          <div class="company">Company</div>
+          <div class="frame-1227">
+            <div class="nomad" id="companyName">Stripe</div>
+          </div>
+        </div>
+      </div>
+      <div class="action">
+        <div class="notification">
+          <div class="default">
+            <div class="ellipse"></div>
+          </div>
+        </div>
+        <!-- <div class="button"> -->
+          <button type="button" onclick="logout()" class="caption3 button">Logout</button>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="nomad2">
+      <img class="group" src="/company_applicantslist/group0.svg" />
+    </div>
+    <div class="top-nav2">
+      <div class="frame-1254">
+        <div class="greeting">
+          <div class="social-media-assistant" id="jobTitle">Social Media Assistant</div>
+          <div class="company-name-location-job-type">
+            <!-- <div class="design">Design</div> -->
+            <div class="ellipse-4"></div>
+            <div class="full-time" id="workType">Full-Time</div>
+            <div class="ellipse-5"></div>
+          </div>
+        </div>
+      </div>
+      <div class="button2">
+        <div class="icon4">
+          <img class="arrow-down-2" src="/company_applicantslist/arrow-down-20.svg" />
+        </div>
+        <div class="caption4"></div>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tab-menu">
+        <div class="caption5">Applicants</div>
+      </div>
+      <div class="tab-menu">
+        <!-- <a href="company_profile.html" class="caption6" style="text-decoration: none;">Job Details</a> -->
+      </div>
+      <div class="tab-menu"></div>
+    </div>
+    <div class="content">
+      <div class="company-dashboard-applicants-desktop">
+        <div class="header">
+          <div class="full-name">
+            <div class="frame-1266">
+              <div class="full-name2">Full Name</div>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="hiring-stage">Hiring Stage</div>
+          </div>
+          <div class="applied-date">
+            <!-- <div class="applied-date2">Applied Date</div> -->
+          </div>
+          <div class="applied-date3">
+            <div class="action2">Action</div>
+          </div>
+        </div>
+        <div class="rows">
+          <div id="applicant-list" class="applicant-list">
+            <div class="name">
+              <div class="frame-1267">
+                <!-- <img class="avatar" src="company_applicantslist/avatar0.svg" /> -->
+                <div class="jake-gyll" id="fullname">Cyndy Lillibridge</div>
+              </div>
+            </div>
+            <div class="label">
+              <div class="label2">
+                <div class="caption7" id="status">Shortlisted</div>
+              </div>
+            </div>
+            <!-- <div class="_13-july-2021">12 July, 2021</div> -->
+            <div class="frame-1265">
+              <!-- <div class="button-secondary-filled-small-no-icon"> -->
+                <button type="button" onclick="applicant()" class="caption8 button-secondary-filled-small-no-icon">See Application</button>
+              <!-- </div> -->
+            </div>
+          </div>
+          <!-- <div class="applicant-list2">
+            <div class="name">
+              <div class="frame-1267">
+                <img class="avatar2" src="company_applicantslist/avatar1.svg" />
+                <div class="jake-gyll">Rodolfo Goode</div>
+              </div>
+            </div>
+            <div class="label">
+              <div class="label3">
+                <div class="caption9">Declined</div>
+              </div>
+            </div>
+            <div class="_13-july-2021">11 July, 2021</div>
+            <div class="frame-1265">
+              <button type="button" onclick="applicant()" class="caption8 button-secondary-filled-small-no-icon">See Application</button>
+            </div>
+          </div> -->
+          <!-- <div class="applicant-list">
+            <div class="name">
+              <div class="frame-1267">
+                <div class="avatar3">
+                  <img class="image-people-7" src="company_applicantlist/image-people-70.png" />
+                </div>
+                <div class="jake-gyll">Jerome Bell</div>
+              </div>
+            </div>
+            <div class="label">
+              <div class="label4">
+                <div class="caption10">Interview</div>
+              </div>
+            </div>
+            <div class="_13-july-2021">5 July, 2021</div>
+            <div class="frame-1265">
+              <button type="button" onclick="applicant()" class="caption8 button-secondary-filled-small-no-icon">See Application</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function routeToProfile(){
+    window.location.href='/companyhome?view=html';
+  }
+  function logout()
+  {
+    window.location.href='/companylogout';
+  }
+
+  function viewApplication(userId)
+  {
+    console.log(userId);
+    window.location.href=`/applicantprofile/${userId}`;
+  }
+
+
+  async function fetchApplicantsList() {
+    const pathParts = window.location.pathname.split('/');
+    const jobId = pathParts[pathParts.length - 1]; // Get job title from the URL or session
+    const response = await fetch(`/applicantslist/${jobId}`);
+    const data = await response.json();
+
+    if (response.ok) {
+      // Fill in the company name, job title, and work type dynamically
+      document.getElementById('companyName').textContent = data.companyName;
+      document.getElementById('jobTitle').textContent = data.jobTitle;
+      document.getElementById('workType').textContent = data.workType;
+
+      // Populate the applicant list
+      const applicantListDiv = document.getElementById('applicant-list');
+      applicantListDiv.innerHTML='';
+      data.applicants.forEach(applicant => {
+        const applicantDiv = document.createElement('div');
+        applicantDiv.classList.add('applicant-list2');
+        applicantDiv.innerHTML = `
+          <div class="name">
+            <div class="frame-1267">
+              <div class="jake-gyll">${applicant.fullname}</div>
+            </div>
+          </div>
+          <div class="label">
+            <div class="label2">
+              <div class="caption7">${applicant.status}</div>
+            </div>
+          </div>
+          <div class="frame-1265">
+            <button type="button" onclick="viewApplication('${applicant.userId}')" class="caption8 button-secondary-filled-small-no-icon">See Application</button>
+          </div>
+        `;
+        applicantListDiv.appendChild(applicantDiv);
+      });
+    } else {
+      console.error('Error fetching applicant data:', data.error);
+    }
+  }
+
+  // Call the function when the page loads
+
+  document.addEventListener("DOMContentLoaded", fetchApplicantsList);
+  
+
+</script>
+</body>
+</html>

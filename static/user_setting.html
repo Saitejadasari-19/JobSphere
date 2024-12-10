@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./user_setting/vars.css">
+  <link rel="stylesheet" href="./user_setting/style.css">
+  
+  
+  <style>
+   a,
+   button{
+    cursor: pointer;
+   }
+   
+   </style>
+  <title>Document</title>
+</head>
+<body>
+
+
+<div class="_2-9-dashboard-settings-account-settings">
+  <div class="group-1018">
+    <div class="side-bar-dashboard-applicant">
+      <div class="menu">
+        <div class="logo-2">
+          <div class="frame-3">
+            <div class="ellipse-2"></div>
+            <img class="vector-7" src="user_setting/vector-70.svg" />
+            <div class="search">
+              <img class="iconly-bold-search" src="user_setting/iconly-bold-search0.svg" />
+            </div>
+          </div>
+          <div class="job-huntly">JobSphere</div>
+        </div>
+        <div class="main-menu">
+          <div class="menu2">
+            <div class="sidebar-menu"></div>
+            <div class="sidebar-menu2">
+              <img class="icon5" src="user_setting/icon4.svg" />
+              <a class="caption" onclick="dashboard()">Dashboard</a>
+            </div>
+            <div class="sidebar-menu2">
+              <div class="icon">
+                <img class="search2" src="user_setting/search1.svg" />
+              </div>
+              <a class="caption" onclick="findjobs()">Find Jobs</a>
+            </div>
+            <div class="sidebar-menu2">
+              <img class="icon2" src="user_setting/icon1.svg" />
+              <a class="caption" onclick="profile()">My Profile</a>
+            </div>
+          </div>
+          <div class="rectangle-2751"></div>
+          <div class="settings">
+            <div class="frame-1208">
+              <div class="settings2">SETTINGS</div>
+            </div>
+            <div class="menu3">
+              <div class="sidebar-menu3">
+                <img class="icon3" src="user_setting/icon2.svg" />
+                <a class="caption">Settings</a>
+              </div>
+              <div class="sidebar-menu3">
+                <img class="icon4" src="user_setting/icon3.svg" />
+                <a class="caption">Help Center</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pattern"></div>
+    </div>
+   
+    <div class="rounded-rectangle"></div>
+    <div class="frame">
+      <div class="logout">
+        <a class="logout2">Logout</a>
+        <img class="icon6" src="user_setting/icon5.svg" />
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="top-nav">
+      <div class="dashboard" onclick="settings()">Settings</div>
+      <div class="action">
+        
+          <button type="button" class="caption2 button" onclick="routeToHome()">Back to homepage</button>
+        
+        <div class="notification"></div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="frame-5176">
+        <div class="tabs">
+          <div class="tab-menu">
+            <div class="caption3">My Profile</div>
+            <img class="rectangle-173" src="user_setting/rectangle-1730.svg" />
+          </div>
+          <div class="tab-menu">
+            <div class="caption4">Info</div>
+          </div>
+        </div>
+      </div>
+      <form id="profile-form" class="applicant-dashboard-my-profile-desktop">
+        <div class="basic-information">
+          <div class="basic-information2">Basic Information</div>
+          <div
+            class="this-is-your-personal-information-that-you-can-update-anytime"
+          >
+            This is your personal information that you can update anytime.
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="profile-photo">
+          <div class="profile-photo2">
+            <div class="profile-photo3">Profile Photo</div>
+            <div
+              class="this-image-will-be-shown-publicly-as-your-profile-picture-it-will-help-recruiters-recognize-you"
+            >
+              This image will be shown publicly as your profile picture, it will
+              help recruiters recognize you!
+            </div>
+          </div>
+          <div class="photo">
+            <img class="avatar" src="user_setting/avatar0.svg" />
+            <div class="textfield">
+
+
+              <div class="frame-1222">
+                <img class="icon7" src="user_setting/icon6.svg" />
+                <div class="frame-1223">
+                  <input  type="file" 
+                  id="image-upload" 
+                  name="image-upload" 
+                  accept="image/*" 
+                  class="svg-png-jpg-or-gif-max-400-x-400-px" 
+                  onchange="previewImage(event)">
+                  <div class="svg-png-jpg-or-gif-max-400-x-400-px">
+                    SVG, PNG, JPG or GIF (max. 400 x 400px)
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="personal-details">
+          <div class="personal-details2">Personal Details</div>
+          <div class="forms">
+            <div class="textfield2">
+              <div class="label">
+                <span>
+                  <span class="label-span" >Full Name</span>
+                  <!-- <span class="label-span2">*</span> -->
+                </span>
+              </div>
+              <div class="input">
+                <div class="this-is-placeholder" id="fullname">Jake Gyll</div>
+              </div>
+            </div>
+            <div class="row-2">
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span5">Email</span>
+                    <!-- <span class="label-span6">*</span> -->
+                  </span>
+                </div>
+                <div class="input">
+                  <div class="this-is-placeholder" name="email" id="email">abc@mail.com</div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="line"></div>
+        <!-- <h2>EDIT</h2> -->
+
+
+
+
+
+
+
+
+        <div class="personal-details">
+          <div class="personal-details2">About Me</div>
+          <div class="forms">
+            <div class="textfield2">
+              <div class="label">
+                <span>
+                  <span class="label-span">Bio</span>
+                  <span class="label-span2">*</span>
+                </span>
+              </div>
+              
+              <input type="text" id="aboutme" name="aboutme" class="input this-is-placeholder" placeholder="About me">
+      
+            </div>
+            <!-- <div class="row-2">
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span3">Phone Number</span>
+                    <span class="label-span4">*</span>
+                  </span>
+                </div>
+                <div class="input">
+                  <div class="this-is-placeholder">+44 1245 572 135</div>
+                </div>
+              </div>
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span5">Bio</span>
+                    <span class="label-span6">*</span>
+                  </span>
+                </div>
+                <div class="input">
+                  <div class="this-is-placeholder">anything be like</div>
+                </div>
+              </div>
+            </div> -->
+            <div class="row-3">
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span7">Phone No</span>
+                    <span class="label-span8">*</span>
+                  </span>
+                </div>
+                <input type="text" id="phonenos" name="phonenos" class="dropdown this-is-placeholder" placeholder="Phone No.">
+              </div>
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span7">Portfolio url</span>
+                    <span class="label-span8">*</span>
+                  </span>
+                </div>
+                <input type="text" id="url" name="url" class="dropdown this-is-placeholder" placeholder="url">
+              </div>
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span7">Experience in Years</span>
+                    <span class="label-span8">*</span>
+                  </span>
+                </div>
+                <input type="text" id="exp" name="exp" class="dropdown this-is-placeholder" placeholder="Experience">
+              </div>
+         
+            </div>
+            <div class="row-3">
+       
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span7">Gender</span>
+                    <span class="label-span8">*</span>
+                  </span>
+                </div>
+                <input type="text" id="gender" name="gender" class="dropdown this-is-placeholder" placeholder="gender">
+              </div>
+              <div class="textfield3">
+                <div class="label">
+                  <span>
+                    <span class="label-span7">Age</span>
+                    <span class="label-span8">*</span>
+                  </span>
+                </div>
+                <input type="text" id="age" name="age" class="dropdown this-is-placeholder" placeholder="age">
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- ------------------------------------------------------------------------------------------------------------ -->
+
+<div class="line"></div>
+<div class="personal-details">
+  <div class="personal-details2">Current Job</div>
+  <div class="forms">
+    <!-- <div class="textfield2">
+      <div class="label">
+        <span>
+          <span class="label-span">mb h1</span>
+          <span class="label-span2">*</span>
+        </span>
+      </div>
+      
+      <input type="text" class="input this-is-placeholder" placeholder="name">
+
+    </div> -->
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Job Title</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="currentjob" name="currentjob" class="dropdown this-is-placeholder" placeholder="ex. Product Manager">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Company Name</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="current_company" name="current_company" class="dropdown this-is-placeholder" placeholder="ex. abcorg">
+      </div>
+    </div>
+
+    
+
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Work-type</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="current_worktype" name="current_worktype" class="dropdown this-is-placeholder" placeholder="ex. full time/part-time/internship">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Start Date</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="current_startdate" name="current_startdate" class="dropdown this-is-placeholder" placeholder="ex. Jan 2024-current">
+      </div>
+    </div>
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Location</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="current_location" name="current_location" class="dropdown this-is-placeholder" placeholder="Dharwad, Karnataka">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Job Description</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="current_jobdescription" name="current_jobdescription" class="dropdown this-is-placeholder" placeholder="description of role">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- -------------------------------------------------------------------------------------- -->
+<div class="line"></div>
+<div class="personal-details">
+  <div class="personal-details2">Most Recent Experience</div>
+  <div class="forms">
+    <!-- <div class="textfield2">
+      <div class="label">
+        <span>
+          <span class="label-span">mb h1</span>
+          <span class="label-span2">*</span>
+        </span>
+      </div>
+      
+      <input type="text" class="input this-is-placeholder" placeholder="name">
+
+    </div> -->
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Job Title</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="recent_jobtitle" name="recent_jobtitle" class="dropdown this-is-placeholder" placeholder="ex. Product Manager">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Company Name</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="recent_company"  name="recent_company" class="dropdown this-is-placeholder" placeholder="ex. abcorg">
+      </div>
+    </div>
+
+    
+
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Work-type</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="recent_worktype" name="recent_worktype" class="dropdown this-is-placeholder" placeholder="ex. full time/part-time/internship">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Duration</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="recent_duration" name="recent_duration" class="dropdown this-is-placeholder" placeholder="ex. Jan 2024-current">
+      </div>
+    </div>
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Location</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="recent_location" name="recent_location" class="dropdown this-is-placeholder" placeholder="Dharwad, Karnataka">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Job Description</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="recent_jobdescription" name="recent_jobdescription" class="dropdown this-is-placeholder" placeholder="description of role">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>
+<div class="personal-details">
+  <div class="personal-details2">Highest Qualification&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div class="forms">
+    <!-- <div class="textfield2">
+      <div class="label">
+        <span>
+          <span class="label-span">mb h1</span>
+          <span class="label-span2">*</span>
+        </span>
+      </div>
+      
+      <input type="text" class="input this-is-placeholder" placeholder="name">
+
+    </div> -->
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Name of Institute</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="institute" name="institute" class="dropdown this-is-placeholder" placeholder="ex. IIT Dharwad">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Degree</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input id="hiEd" name="hiEd" type="text" class="dropdown this-is-placeholder" placeholder="ex. Mtech in CSE">
+      </div>
+    </div>
+
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Duration</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="duration" name="duration" class="dropdown this-is-placeholder" placeholder="ex. July 2024-May 2026">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Course Description</span>
+            <span class="label-span10">*</span>
+          </span>
+        </div>
+        <input type="text" id="coursedescription" name="coursedescription" class="dropdown this-is-placeholder" placeholder="description of learnings">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+<div class="line"></div>
+<div class="personal-details">
+  <div class="personal-details2">Skills&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div class="forms">
+    <!-- <div class="textfield2">
+      <div class="label">
+        <span>
+          <span class="label-span">mb h1</span>
+          <span class="label-span2">*</span>
+        </span>
+      </div>
+      
+      <input type="text" class="input this-is-placeholder" placeholder="name">
+
+    </div> -->
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Skill 1</span>
+            <span class="label-span8">*</span>
+          </span>
+        </div>
+        <input type="text" id="skill1" name="skill1" class="dropdown this-is-placeholder" placeholder="primary skill">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Skill 2</span>
+            <!-- <span class="label-span10">*</span> -->
+          </span>
+        </div>
+        <input type="text" id="skill2" name="skill2" class="dropdown this-is-placeholder" placeholder="skill 2">
+      </div>
+    </div>
+
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Skill 3</span>
+            <!-- <span class="label-span8">*</span> -->
+          </span>
+        </div>
+        <input type="text" id="skill3" name="skill3" class="dropdown this-is-placeholder" placeholder="skill 3">
+      </div>
+
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span9">Skill 4</span>
+            <!-- <span class="label-span10">*</span> -->
+          </span>
+        </div>
+        <input type="text" id="skill4" name="skill4" class="dropdown this-is-placeholder" placeholder="skill 4">
+      </div>
+    </div>
+    <div class="row-3">
+      <div class="textfield3">
+        <div class="label">
+          <span>
+            <span class="label-span7">Skill 5</span>
+            <!-- <span class="label-span8">*</span> -->
+          </span>
+        </div>
+        <input type="text" id="skill5" name="skill5" class="dropdown this-is-placeholder" placeholder="skill 5">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+
+
+        <div class="line"></div>
+          <button type="submit" class="caption5 button2">Save Profile</button>
+        <div class="line"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script>
+document.getElementById('profile-form').addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevent the form from submitting normally
+
+  // Collecting the form data
+  const formData = new FormData(this);
+
+  // Create a JSON object to hold the data
+  const profileData = {
+    email: formData.get('email'),
+    mobile: formData.get('phonenos'),  // Assuming this is phone number field
+    userId: "some-user-id",  // This should be retrieved based on the logged-in user
+    name: formData.get('fullname'),
+    // skills: [formData.get('skill1'), formData.get('skill2'), formData.get('skill3'), formData.get('skill4'), formData.get('skill5')].join(', '),
+    skill1 : formData.get('skill1'),
+    skill2 : formData.get('skill2'),
+    skill3 : formData.get('skill3'),
+    skill4 : formData.get('skill4'),
+    skill5 : formData.get('skill5'),
+    experience: formData.get('exp'),
+    education: formData.get('hiEd'),
+    age: formData.get('age'),
+    gender: formData.get('gender'),
+    aboutMe: formData.get('aboutme'),
+    currentJob: formData.get('currentjob'),
+    photo: formData.get('image-upload'),  // Photo as a file (will need to handle file upload)
+    hiEd: formData.get('hiEd'),
+    portfolio_url: formData.get('url'),
+    current_company: formData.get('current_company'),
+    work_type: formData.get('current_worktype'),
+    start_date: formData.get('current_startdate'),
+    current_location: formData.get('current_location'),
+    job_description: formData.get('current_jobdescription'),
+    currentjob : formData.get('currentjob'),
+    recent_jobtitle: formData.get('recent_jobtitle'),
+    recent_company: formData.get('recent_company'),
+    recent_worktype: formData.get('recent_worktype'),
+    recent_duration: formData.get('recent_duration'),
+    recent_location: formData.get('recent_location'),
+    recent_jobdescription: formData.get('recent_jobdescription'),
+    institute: formData.get('institute'),
+    duration: formData.get('duration'),
+    Degree: formData.get('hiEd'),
+    course_description: formData.get('coursedescription'),
+  };
+
+  // If the photo is a file input, convert it to a Base64 string or send it as FormData.
+  if (formData.get('image-upload')) {
+    const photoFile = formData.get('image-upload');
+    const reader = new FileReader();
+    reader.onloadend = function() {
+      // Convert the photo to base64 string and add it to the profile data
+      profileData.photo = reader.result.split(',')[1];  // Remove the data URL part (i.e., "data:image/png;base64,")
+
+      // Now send the data to the server using Fetch API
+      sendDataToBackend(profileData);
+    };
+    reader.readAsDataURL(photoFile);  // Read file as Base64
+  } else {
+    // If no photo is uploaded, send the data immediately
+    sendDataToBackend(profileData);
+  }
+});
+
+function showname(){
+  fetch('/usersettingsname')
+  .then(response => response.json())
+      .then(data => {
+        document.getElementById('fullname').textContent = data.fullname;
+        document.getElementById('email').textContent = data.email;
+      })
+      .catch(error => console.error('Error fetching jobs:', error));
+}
+
+function routeToHome(){
+  window.location.href='/userhome?view=html'
+}
+
+window.addEventListener("DOMContentLoaded",showname());
+function sendDataToBackend(profileData) {
+  fetch('/save-profile', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(profileData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      window.location.href='/userprofile';
+    } else {
+      alert('Error saving profile: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Failed to save profile. Please try again later.');
+  });
+}
+
+function findjobs(){
+      window.location.href='/jobs'
+    }
+    function dashboard()
+  {
+    window.location.href='/dashboard?view=html';
+  }
+  function profile(){
+      window.location.href='/userprofile'
+    }
+    function settings(){
+      window.location.href='/settings?view=html'
+    }
+
+</script>
+
+</body>
+</html>

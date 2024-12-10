@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/company_applicantprofile/vars.css">
+  <link rel="stylesheet" href="/company_applicantprofile/style.css">
+  <style>
+    .dec{
+      position: relative;
+      left: 375px;
+      border-color: rgb(246, 160, 160);
+    }
+    .dec2{
+      color: red;
+      text-decoration-color: red;
+    }
+    .minus{
+      position: relative;
+      left: 81px;
+    }
+
+    button{
+      cursor: pointer;
+    }
+  
+  </style>
+</head>
+<body>
+<div class="_3-5-dashboard-company-applicant-profile">
+  <div class="side-bar-dashboard-company">
+    <div class="menu">
+      <div class="logo-2">
+        <div class="frame-3">
+          <div class="ellipse-2"></div>
+          <img class="vector-7" src="/company_applicantprofile/vector-70.svg" />
+          <div class="search">
+            <img class="iconly-bold-search" src="/company_applicantprofile/iconly-bold-search0.svg" />
+          </div>
+        </div>
+        <div class="job-huntly">JobSphere</div>
+      </div>
+      <div class="main-menu">
+        <div class="menu2">
+          <div class="sidebar-menu">
+            <img class="icon" src="/company_applicantprofile/icon0.svg" />
+            <a class="caption" style="text-decoration: none; cursor:pointer" onclick="route()">My Profile</a>
+          </div>
+          <div class="sidebar-menu2">
+            <img class="indicator" src="/company_applicantprofile/indicator0.svg" />
+            <div class="menu3">
+              <img class="icon2" src="/company_applicantprofile/icon1.svg" />
+              <a class="caption2" style="text-decoration: none;">All Applicants</a>
+            </div>
+          </div>
+          <!-- <div class="sidebar-menu">
+            <img class="icon3" src="/company_applicantprofile/icon2.svg" />
+            <a class="caption" style="text-decoration: none;">Job Listing</a>
+          </div> -->
+        </div>
+        <div class="rectangle-2751"></div>
+        <div class="settings">
+          <div class="frame-1208">
+            <div class="settings2">SETTINGS</div>
+          </div>
+          <div class="menu4">
+            <div class="sidebar-menu3">
+              <img class="icon4" src="/company_applicantprofile/icon3.svg" />
+              <a href="" class="caption" style="text-decoration: none;">Settings</a>
+            </div>
+            <div class="sidebar-menu4">
+              <img class="icon5" src="/company_applicantprofile/icon4.svg" />
+              <a href="" class="caption" style="text-decoration: none;">Help Center</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="profile" src="/company_applicantprofile/profile0.svg" />
+  </div>
+  <div class="frame-1303">
+    <div class="top-nav">
+      <div class="frame-1254">
+        <img class="icon6" src="/company_applicantprofile/icon5.svg" />
+        <div class="applicant-details">Applicant Details</div>
+      </div>
+      <button type="button" class="button dec">
+        <div class="icon7"></div>
+        <div class="caption3 dec2" onclick="decline()">Decline</div>
+      </button>
+      <img class="minus" src="/company_applicantprofile/dec.svg" />
+      <button type="button" class="button">
+        <div class="icon7"></div>
+        <div class="caption3" onclick="shortlist()">ShortList</div>
+      </button>
+    </div>
+    <img class="icon8" src="/company_applicantprofile/icon7.svg" />
+   
+    <div class="main-content">
+      <div class="company-dashboard-applicant-s-data-desktop">
+        <div class="header">
+          <div class="avatar">
+            <img id="profile-photo" class="image-people-7" src="/company_applicantprofile/image-people-70.png" />
+          </div>
+          <div class="name">
+            <div id="name" class="jerome-bell">Jerome Bell</div>
+            <div id="currentjob" class="product-designer">Product Designer</div>
+            <div class="frame-1263">
+              <div class="_4-0"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons">
+          
+            <button type="button" class="caption4 button2" onclick="interview()">Schedule Interview</button>
+          
+        </div>
+        <div class="line"></div>
+        <div class="social-links">
+          <div class="frame-1215">
+            <div class="contact">Contact</div>
+          </div>
+          <div class="email">
+            <img class="icon9" src="/company_applicantprofile/icon8.svg" />
+            <div class="content">
+              <div class="email2">Email</div>
+              <div id="email" class="jerome-bell-45-email-com">jeromeBell45@email.com</div>
+            </div>
+          </div>
+          <div class="email">
+            <img class="icon10" src="/company_applicantprofile/icon9.svg" />
+            <div class="content">
+              <div class="phone">Phone</div>
+              <div id="phone" class="_44-1245-572-135">+44 1245 572 135</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-dashboard-applicant-profile-desktop">
+        <div class="content2">
+          <div class="personal-info">
+            <div class="personal-info2">Personal Info</div>
+            <div class="content3">
+              <div class="col-1">
+                <div class="name2">
+                  <div class="full-name">Full Name</div>
+                  <div id="fullname" class="jerome-bell2">Jerome Bell</div>
+                </div>
+                <div class="dob">
+                  <div class="date-of-birth">Age</div>
+                  <div class="march-23-1995-26-y-o">
+                    <span>
+                      <span id="age" class="march-23-1995-26-y-o-span">
+                        March 23, 1995
+                      </span>
+                      
+                      <span class="march-23-1995-26-y-o-span3"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="gender">
+                  <div class="gender2">Gender</div>
+                  <div id="gender" class="male">Male</div>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+          <div class="rectangle-2758"></div>
+          <div class="professional-info">
+            <div class="professional-info2">Professional Info</div>
+            <div class="about-me">
+              <div class="about-me2">About Me</div>
+              <div class="about-me3">
+                <div id="aboutme"
+                  class="i-m-a-product-designer-filmmaker-currently-working-remotely-at-twitter-from-beautiful-manchester-united-kingdom-i-m-passionate-about-designing-digital-products-that-have-a-positive-impact-on-the-world"
+                >
+                  I’m a product designer + filmmaker currently working remotely
+                  at Twitter from beautiful Manchester, United Kingdom. I’m
+                  passionate about designing digital products that have a
+                  positive impact on the world.
+                </div>
+    
+              </div>
+            </div>
+            <div class="content4">
+              <div class="col-1">
+                <div class="current-job">
+                  <div class="current-job2">Current Job</div>
+                  <div id="currjob" class="product-designer2">Product Designer</div>
+                </div>
+                <div class="h-ighest-qualification">
+                  <div class="highest-qualification-held">
+                    Highest Qualification Held
+                  </div>
+                  <div id="hiEd" class="bachelors-in-engineering">
+                    Bachelors in Engineering
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="experience-in-years">
+                  <div class="experience-in-years2">Experience in Years</div>
+                  <div id="exp" class="_4-years">4</div>
+                </div>
+                <div class="skill-set">
+                  <div class="skill-set2">Skill set</div>
+                  <div class="frame-1259">
+                    <div class="tag">
+                      <div id="skill1" class="caption5">Project Management</div>
+                    </div>
+                    <div class="tag">
+                      <div id="skill2" class="caption5">Copywriting</div>
+                    </div>
+                    <div class="tag">
+                      <div id="skill3" class="caption5">English</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  function route(){
+    window.location.href='/companyhome?view=html';
+  }
+  function decline(){
+    const pathParts = window.location.pathname.split('/');
+    const applicantId = pathParts[pathParts.length - 1];
+    const st="Declined";
+    fetch(`/status/${st}/${applicantId}`, {
+      method: "POST"  
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+        alert(data.message);
+        window.location.href='/companyhome?view=html';
+      } else {
+          console.error("Error updating status:", data.message);
+      }
+  })
+  .catch(error => console.error("Request failed:", error));  
+  }
+  function interview(){
+    const pathParts = window.location.pathname.split('/');
+    const applicantId = pathParts[pathParts.length - 1];
+    const st="Interview";
+    fetch(`/status/${st}/${applicantId}`, {
+      method: "POST"  
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+        alert(data.message);
+        window.location.href='/companyhome?view=html';
+      } else {
+          console.error("Error updating status:", data.message);
+      }
+  })
+  .catch(error => console.error("Request failed:", error));  
+  }
+  function shortlist(){
+    const pathParts = window.location.pathname.split('/');
+    const applicantId = pathParts[pathParts.length - 1];
+    const st="Shortlisted";
+    fetch(`/status/${st}/${applicantId}`, {
+      method: "POST"  // Explicitly set method to POST
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          alert(data.message);
+          window.location.href='/companyhome?view=html';
+          // Optionally, update the UI to reflect the status change
+      } else {
+          console.error("Error updating status:", data.message);
+      }
+  })
+  .catch(error => console.error("Request failed:", error));
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+  const pathParts = window.location.pathname.split('/');
+  const applicantId = pathParts[pathParts.length - 1];
+  console.log(applicantId);
+  fetch(`/api/applicant/${applicantId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('Error: ' + data.error);
+            } else {
+                // Set profile data dynamically
+                document.getElementById('name').innerText = data.name;
+                document.getElementById('fullname').innerText = data.name;
+                document.getElementById('aboutme').innerText = data.aboutMe;
+                document.getElementById('currentjob').innerText = data.currentJob;
+                document.getElementById('currjob').innerText = data.currentJob;
+                document.getElementById('age').innerText = data.age;
+                document.getElementById('gender').innerText = data.gender;
+                document.getElementById('hiEd').innerText = data.hiEd;
+                document.getElementById('email').innerText = data.email;
+                document.getElementById('phone').innerText = data.mobile;                
+                document.getElementById('exp').innerText = data.experience;                
+                document.getElementById('skill1').innerText = data.skill1;                
+                document.getElementById('skill2').innerText = data.skill2 || '';                
+                document.getElementById('skill3').innerText = data.skill3 || '';                               
+
+
+                // Optionally, set the profile photo (assuming it's base64 encoded or an image URL)
+                document.getElementById('profile-photo').src = 'data:image/jpeg;base64,' + data.photo;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching profile data:', error);
+        });
+      });
+  
+</script>
+</html>

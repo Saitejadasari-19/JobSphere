@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./user_joblisting/vars.css">
+  <link rel="stylesheet" href="./user_joblisting/style.css">
+  
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   button{
+    cursor: pointer;
+  }
+   </style>
+  <title>Document</title>
+</head>
+<body>
+<div class="_1-2-find-jobs">
+  <div class="header-2-desktop">
+    <div class="bg">
+      <div class="rectangle-2741"></div>
+    </div>
+    <div class="content">
+      <div class="headline">
+        <div class="headline2">
+          <div class="frame-1261">
+            <div class="find-your">Find your</div>
+            <div class="frame-1262">
+              <div class="dream-job">dream job</div>
+              <img class="group" src="user_joblisting/group0.svg" />
+            </div>
+          </div>
+          <div
+            class="find-your-next-career-at-companies-like-hub-spot-nike-and-dropbox"
+          >
+            Find your next career at companies like HubSpot, Nike, and Dropbox
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <form class="search-bar" method="post">
+          <div class="job-title">
+            <div class="icon">
+              <img class="search2" src="user_joblisting/search1.svg" />
+            </div>
+            <div class="frame-1063">
+              <input type="text" name="title_keyword" class="job-title-or-keyword" placeholder="Job title or keyword"/>
+              <div class="rectangle-2707"></div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="location">
+            <div class="icon">
+              <img class="location2" src="user_joblisting/location1.svg" />
+            </div>
+            <div class="frame-1063">
+              <div class="frame-1065">
+                <input type="text" name="location" class="job-title-or-keyword" placeholder="Location"/>
+                <!-- <div class="icon2">
+                  <img class="arrow-down-2" src="arrow-down-20.svg" />
+                </div> -->
+              </div>
+              <div class="rectangle-2707"></div>
+            </div>
+          </div>
+          <!-- <div class="button"> -->
+            <button type="submit" class="caption1 button" onclick="">Search</button>
+          <!-- </div> -->
+        </form>
+        <!-- <div class="popular-ui-designer-ux-researcher-android-admin">
+          Popular : UI Designer, UX Researcher, Android, Admin
+        </div> -->
+      </div>
+    </div>
+    <div class="top-nav">
+      <div class="menu">
+        <div class="logo">
+          <div class="logo-1">
+            <div class="frame-3">
+              <div class="ellipse-2"></div>
+              <img class="vector-7" src="user_joblisting/vector-70.svg" />
+              <div class="iconly-light-search">
+                <img class="search3" src="user_joblisting/search2.svg" />
+              </div>
+            </div>
+            <div class="job-huntly"></div>
+          </div>
+          <div class="logo-2">
+            <div class="frame-3">
+              <div class="ellipse-2"></div>
+              <img class="vector-72" src="user_joblisting/vector-71.svg" />
+              <div class="search4">
+                <img class="iconly-bold-search" src="user_joblisting/iconly-bold-search0.svg" />
+              </div>
+            </div>
+            <div class="job-huntly">JobSphere</div>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <!-- <div class="button2"> -->
+          <!-- <div class="caption2">Logout</div> -->
+          <button class="button2 caption2" onclick="routetoLogin()">Logout</button>
+        <!-- </div> -->
+        <!-- <div class="button3"> -->
+          <button class="caption2_1 button3" onclick="routetoHome()">Home</button>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="landing-page-job-list-desktop">
+    <form id="filterForm" class="filter" method="post">
+      <div class="type-of-employment">
+        <div class="frame-1143">
+          <div class="type-of-employment2">Type of Employment</div>
+          <!-- <div class="icon3">
+            <img class="arrow-down-22" src="user_joblisting/arrow-down-21.svg" />
+          </div> -->
+        </div>
+        <div class="checkbox">
+          <!-- <div class="checkbox-false"></div>
+          <div class="caption3">Full-time (3)</div> -->
+          <input class="check" type="checkbox" id="fulltime" name="type" value="Full-Time">
+          <label for="fulltime" class="caption3">Full-Time</label><br>
+        </div>
+        <div class="checkbox">
+          <!-- <div class="checkbox-false"></div>
+          <div class="caption3">Part-Time (5)</div> -->
+          <input class="check" type="checkbox" id="parttime" name="type" value="Part-Time">
+          <label for="parttime" class="caption3">Part-Time</label><br>
+        </div>
+        <div class="checkbox">
+          <!-- <div class="checkbox-false"></div>
+          <div class="caption3">Full-time (3)</div> -->
+          <input class="check" type="checkbox" id="contract" name="type" value="Contract">
+          <label for="contract" class="caption3">Contract</label><br>
+        </div>
+        <div class="checkbox">
+          <!-- <div class="checkbox-false"></div>
+          <div class="caption3">Full-time (3)</div> -->
+          <input class="check" type="checkbox" id="intern" name="type" value="Intern">
+          <label for="intern" class="caption3">Intern</label><br>
+        </div>
+        <div class="checkbox">
+          <!-- <div class="checkbox-false"></div>
+          <div class="caption3">Full-time (3)</div> -->
+          <input class="check" type="checkbox" id="temp" name="type" value="Temporary">
+          <label for="temp" class="caption3">Temporary</label><br>
+        </div>
+      </div>
+      <!-- <div class="salary-range">
+        <div class="frame-1143">
+          <div class="salary-range2">Salary Range</div>
+          <div class="icon3">
+            <img class="arrow-down-25" src="arrow-down-24.svg" />
+          </div>
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="700" name="700" value="700">
+          <label for="700" class="caption3">$700 - $1000 </label><br>
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="1000" name="1000" value="1000">
+          <label for="1000" class="caption3">$1000 - $1500 </label><br>
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="1500" name="1500" value="1500">
+          <label for="1500" class="caption3">$1500 - $2000 </label><br>
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="3000" name="3000" value="3000">
+          <label for="3000" class="caption3">$3000 or above </label><br>
+        </div>
+      </div> -->
+      <div class="salary-range">
+        <div class="frame-1143">
+          <div class="salary-range2">Experience</div>
+          <!-- <div class="icon3">
+            <img class="arrow-down-25" src="arrow-down-24.svg" />
+          </div> -->
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="08" name="exp" value="0 to 8 Years">
+          <label for="08" class="caption3">0 to 8 Years </label><br>
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="214" name="exp" value="2 to 14 Years">
+          <label for="214" class="caption3">2 to 14 Years </label><br>
+        </div>
+        <div class="checkbox">
+          <input class="check" type="checkbox" id="310" name="exp" value="3 to 10 Years">
+          <label for="310" class="caption3">3 to 10 Years </label><br>
+        </div>
+      </div>
+    </form>
+    <div class="job-list">
+      <div class="headline3">
+        <div class="frame-1176">
+          <div class="all-jobs">All Jobs</div>
+          <div id="showingresults" class="showing-73-results">Showing 10 results</div>
+        </div>
+      </div>
+      <div id="lists" class="lists">
+        <div class="job-list2">
+          <div class="main-content">
+            <div class="company-logo">
+              <div class="base"></div>
+              <div class="nomad">
+                <img class="group2" src="user_joblisting/group1.svg" />
+              </div>
+            </div>
+            <div class="job-title2">
+              <div class="social-media-assistant">Social Media Assistant</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">Nomad</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">Paris, France</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="job-list2">
+          <div class="main-content">
+            <div class="company-logo">
+              <div class="base"></div>
+              <img class="dropbox" src="user_joblisting/dropbox0.svg" />
+            </div>
+            <div class="job-title2">
+              <div class="social-media-assistant">Brand Designer</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">Dropbox</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">San Fransisco, USA</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+            <!-- <div class="button4"> -->
+              <!-- <div class="caption">Apply</div> -->
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="job-list2">
+          <div class="main-content">
+            <div class="company-logo">
+              <div class="base"></div>
+              <div class="terraform-enterprise">
+                <img class="xmlid-8" src="user_joblisting/xmlid-80.svg" />
+              </div>
+            </div>
+            <div class="job-title2">
+              <div class="social-media-assistant">Interactive Developer</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">Terraform</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">Hamburg, Germany</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+            <!-- <div class="button4"> -->
+              <!-- <div class="caption">Apply</div> -->
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="job-list2">
+          <div class="main-content">
+            <img class="company-logo2" src="user_joblisting/company-logo3.svg" />
+            <div class="job-title2">
+              <div class="social-media-assistant">Email Marketing</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">Revolut</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">Madrid, Spain</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+            <!-- <div class="button4"> -->
+              <!-- <div class="caption">Apply</div> -->
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="job-list2">
+          <div class="main-content">
+            <div class="company-logo">
+              <div class="ellipse-3"></div>
+              <img
+                class="v-6-g-hz-ad-400-x-400"
+                src="user_joblisting/v-6-g-hz-ad-400-x-4000.png"
+              />
+            </div>
+            <div class="job-title2">
+              <div class="social-media-assistant">Lead Engineer</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">Canva</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">Ankara, Turkey</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+            <!-- <div class="button4"> -->
+              <!-- <div class="caption">Apply</div> -->
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="job-list2">
+          <div class="main-content">
+            <img class="company-logo3" src="user_joblisting/company-logo5.svg" />
+            <div class="job-title2">
+              <div class="social-media-assistant">Product Designer</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">ClassPass</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">Berlin, Germany</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+            <!-- <div class="button4"> -->
+              <!-- <div class="caption">Apply</div> -->
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="job-list2">
+          <div class="main-content">
+            <img class="company-logo4" src="user_joblisting/company-logo6.svg" />
+            <div class="job-title2">
+              <div class="social-media-assistant">Customer Manager</div>
+              <div class="company-name-location-job-type">
+                <div class="nomad2">Pitch</div>
+                <div class="ellipse-4"></div>
+                <div class="paris-france">Berlin, Germany</div>
+              </div>
+              <div class="label">
+                <div class="label2">
+                  <div class="caption4">Full-Time</div>
+                </div>
+                <div class="rectangle-2752"></div>
+                <div class="label3">
+                  <div class="caption5">Marketing</div>
+                </div>
+                <div class="label4">
+                  <div class="caption6">Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-1185">
+            <!-- <div class="button4"> -->
+              <!-- <div class="caption">Apply</div> -->
+              <button class="caption1 button4" onclick="window.open('user_apply.html', '_self');">Apply</button>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="pagination">
+        <img class="icon6" src="icon9.svg" />
+        <div class="frame-1269">
+          <div class="pagination2">
+            <div class="_33">1</div>
+          </div>
+          <div class="pagination3">
+            <div class="_1">2</div>
+          </div>
+          <div class="pagination3">
+            <div class="_1">3</div>
+          </div>
+          <div class="pagination3">
+            <div class="_1">4</div>
+          </div>
+          <div class="pagination3">
+            <div class="_1">5</div>
+          </div>
+          <div class="pagination3">
+            <div class="_1">...</div>
+          </div>
+          <div class="pagination3">
+            <div class="_1">33</div>
+          </div>
+        </div>
+        <img class="icon7" src="icon10.svg" />
+      </div> -->
+    </div>
+  </div>
+  <div class="footer">
+    <img class="social-media-icons" src="user_joblisting/social-media-icons0.svg" />
+    <div class="_2021-job-huntly-all-rights-reserved">
+      2024 @ JobSphere. All rights reserved.
+    </div>
+    <!-- <img class="divider4" src="user_joblisting/divider3.svg" /> -->
+    <div class="subscribe">
+      <div class="frame-1260">
+        <div class="input">
+          <input type="email" class="this-is-placeholder" placeholder="Email Address"/>
+        </div>
+        <!-- <div class="button3"> -->
+          <!-- <div class="caption">Subscribe</div> -->
+          <button class="caption button3">Subscribe</button>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="the-latest-job-news-articles-sent-to-your-inbox-weekly">
+      The latest job news, articles, sent to your inbox weekly.
+    </div>
+    <div class="get-job-notifications">Get job notifications</div>
+    <div class="second-column">
+      <div class="description">
+        <div class="contact-us">Contact Us</div>
+        <div class="updates">Updates</div>
+        <div class="guide">Guide</div>
+        <div class="help-docs">Help Docs</div>
+      </div>
+      <div class="resources">Resources</div>
+    </div>
+    <div class="first-column">
+      <div class="description2">
+        <div class="companies">Companies</div>
+        <div class="terms">Terms</div>
+        <div class="privacy-policy">Privacy Policy</div>
+      </div>
+      <div class="about">About</div>
+    </div>
+    <div
+      class="great-platform-for-the-job-seeker-that-passionate-about-startups-find-your-dream-job-easier"
+    >
+      With personalized recommendations and a wide range of listings—from
+      full-time positions to internships—Job Sphere streamlines the job search
+      process. Join today to unlock your next career opportunity!
+    </div>
+    <div class="logo-2">
+      <div class="frame-32">
+        <div class="ellipse-2"></div>
+        <img class="vector-73" src="user_joblisting/vector-72.svg" />
+        <div class="search4">
+          <img class="iconly-bold-search2" src="user_joblisting/iconly-bold-search1.svg" />
+        </div>
+      </div>
+      <div class="job-huntly2">JobSphere</div>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.filter input').forEach(input => {
+    input.addEventListener('change', fetchJobs);
+});
+  document.querySelector('.search-bar').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    // Gather filters (checkboxes) manually
+    const filters = document.querySelectorAll('.filter input[type="checkbox"]:checked');
+    filters.forEach(filter => formData.append(filter.name, filter.value));
+
+    // Send the combined data to the backend
+    const response = await fetch('/api/searchjobs', {
+        method: 'POST',
+        body: formData
+    });
+
+    const jobs = await response.json();
+    updateJobListings(jobs);
+  });
+
+  function route(jobid){
+    window.location.href=`/apply/${jobid}`;
+  }
+  function routetoHome(){
+    window.location.href='/userhome?view=html';
+  }
+  function routetoLogin(){
+    window.location.href='/userLogin?view=html';
+  }
+  function fetchJobs() {
+    // Collect selected filters
+    const formData = new FormData(document.getElementById('filterForm'));
+    const params = new URLSearchParams(formData);
+  
+    // Fetch data from Flask backend with filters applied
+    fetch(`/api/jobslist?${params}`)
+      .then(response => response.json())
+      .then(data => updateJobListings(data))
+      .catch(error => console.error('Error fetching jobs:', error));
+
+
+}
+  
+  function updateJobListings(jobs) {
+
+    const resultCount = jobs.length;
+    document.getElementById('showingresults').innerHTML = `Showing ${resultCount} results`;
+
+
+      const listings = document.getElementById('lists');
+      console.log(jobs)
+      listings.innerHTML = ''; // Clear previous listings
+  
+      jobs.forEach(job => {
+          // Create the main job listing container
+          const jobContainer = document.createElement('div');
+          jobContainer.className = 'job-list2';
+  
+          // Build the HTML structure
+          jobContainer.innerHTML = `
+              <div class="main-content">
+                  <div class="job-title2">
+                      <div class="social-media-assistant">${job.jobTitle}</div>
+                      <div class="company-name-location-job-type">
+                          <div class="nomad2">${job.companyName}</div>
+                          <div class="ellipse-4"></div>
+                          <div class="paris-france">${job.location}</div>
+                      </div>
+                      <div class="label">
+                          <div class="label2">
+                              <div class="caption4">${job.workType}</div>
+                          </div>
+                         <div class="rectangle-2752"></div>
+                          <div class="label3">
+                            <div class="caption5">${job.experience}</div>
+                          </div>
+                          <div class="label4">
+                            <div class="caption6">${job.salaryRange}n</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="frame-1185">
+                  <button class="caption1 button4" onclick="route(${job.jobId})">Apply</button>
+              </div>
+          `;
+  
+          // Append the job container to the listings section
+          listings.appendChild(jobContainer);
+      });
+  }
+  function showjobs(){
+    fetch('/showjobs')
+      .then(response => response.json())
+      .then(data => updateJobListings(data))
+      .catch(error => console.error('Error fetching jobs:', error));
+  }
+  window.addEventListener("DOMContentLoaded",showjobs());
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+.landing-page-submit-application-desktop,
+.landing-page-submit-application-desktop * {
+  box-sizing: border-box;
+}
+.landing-page-submit-application-desktop {
+  height: 1267px;
+  position: relative;
+}
+.base {
+  background: var(--color-white, #ffffff);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 84.93%;
+  position: absolute;
+  right: 4.97%;
+  left: 4.97%;
+  bottom: 7.06%;
+  top: 8.02%;
+  margin: auto;
+}
+.role {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.company-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.base2 {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.nomad {
+  width: 75.94%;
+  height: 90%;
+  position: absolute;
+  right: 11.56%;
+  left: 12.5%;
+  bottom: 5%;
+  top: 5%;
+  overflow: hidden;
+}
+.group {
+  width: 100%;
+  height: 99.7%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0.3%;
+  top: 0.01%;
+  overflow: visible;
+}
+.job-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.social-media-assistant {
+  color: var(--neutrals-100, #25324b);
+  text-align: left;
+  font-family: "RedHatDisplay-SemiBold", sans-serif;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 600;
+  position: relative;
+}
+.frame {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.nomad2 {
+  color: var(--neutrals-80, #515b6f);
+  text-align: center;
+  font-family: var(
+    --body-large-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-large-regular-font-size, 18px);
+  line-height: var(--body-large-regular-line-height, 160%);
+  font-weight: var(--body-large-regular-font-weight, 400);
+  position: relative;
+  max-width: 210px;
+}
+.ellipse-4 {
+  background: var(--neutrals-80, #515b6f);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  position: relative;
+}
+.paris-france {
+  color: var(--neutrals-80, #515b6f);
+  text-align: left;
+  font-family: var(
+    --body-large-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-large-regular-font-size, 18px);
+  line-height: var(--body-large-regular-line-height, 160%);
+  font-weight: var(--body-large-regular-font-weight, 400);
+  position: relative;
+}
+.ellipse-5 {
+  background: var(--neutrals-80, #515b6f);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  position: relative;
+}
+.full-time {
+  color: var(--neutrals-80, #515b6f);
+  text-align: left;
+  font-family: var(
+    --body-large-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-large-regular-font-size, 18px);
+  line-height: var(--body-large-regular-line-height, 160%);
+  font-weight: var(--body-large-regular-font-weight, 400);
+  position: relative;
+}
+.divider {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: var(--neutrals-20, #d6ddeb);
+  border-width: 1px 0 0 0;
+  flex-shrink: 0;
+  width: 580px;
+  height: 0px;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.form{
+  display: flex; 
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+/* .submit-your-application {
+  display: flex; 
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+} */
+.submit-your-application2 {
+  color: var(--neutrals-100, #25324b);
+  text-align: center;
+  font-family: "RedHatDisplay-SemiBold", sans-serif;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 600;
+  position: relative;
+}
+.the-following-is-required-and-will-only-be-shared-with-nomad {
+  color: var(--neutrals-60, #7c8493);
+  text-align: center;
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+  position: relative;
+}
+.textfield {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  border:none;
+}
+.label {
+  color: var(--neutrals-80, #515b6f);
+  text-align: left;
+  font-family: var(
+    --body-normal-semibold-font-family,
+    "Epilogue-SemiBold",
+    sans-serif
+  );
+  font-size: var(--body-normal-semibold-font-size, 16px);
+  line-height: var(--body-normal-semibold-line-height, 160%);
+  font-weight: var(--body-normal-semibold-font-weight, 600);
+  position: relative;
+}
+.input {
+  background: var(--neutrals-0, #ffffff);
+  border-style: solid;
+  border-color: var(--neutrals-20, #d6ddeb);
+  border-width: 1px;
+  padding: 12px 16px 12px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.this-is-placeholder {
+  color: var(--neutrals-40, #a8adb7);
+  text-align: left;
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+  position: relative;
+}
+.links {
+  color: var(--neutrals-100, #25324b);
+  text-align: left;
+  font-family: var(--body-large-bold-font-family, "Epilogue-Bold", sans-serif);
+  font-size: var(--body-large-bold-font-size, 18px);
+  line-height: var(--body-large-bold-line-height, 160%);
+  font-weight: var(--body-large-bold-font-weight, 700);
+  position: relative;
+}
+.textfield2 {
+  display: flex;
+  flex-direction: row;
+  gap: 197px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.attach-your-resume {
+  color: var(--color-black, #202430);
+  text-align: left;
+  font-family: var(
+    --body-normal-semibold-font-family,
+    "Epilogue-SemiBold",
+    sans-serif
+  );
+  font-size: var(--body-normal-semibold-font-size, 16px);
+  line-height: var(--body-normal-semibold-line-height, 160%);
+  font-weight: var(--body-normal-semibold-font-weight, 600);
+  position: relative;
+}
+.form-attach {
+  background: var(--lights-gray, #f8f8fd);
+  border-radius: 4px;
+  border-style: dashed;
+  border-color: var(--brands-primary, #4640de);
+  border-width: 1px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.attach-resume-cv {
+  color: var(--neutrals-80, #515b6f);
+  text-align: left;
+  font-family: var(
+    --body-normal-medium-font-family,
+    "Epilogue-Medium",
+    sans-serif
+  );
+  font-size: var(--body-normal-medium-font-size, 16px);
+  line-height: var(--body-normal-medium-line-height, 160%);
+  font-weight: var(--body-normal-medium-font-weight, 500);
+  position: relative;
+}
+.button {
+  background: var(--brands-primary, #4640de);
+  padding: 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.caption {
+  color: var(--neutrals-0, #ffffff);
+  text-align: center;
+  font-family: var(--button-normal-font-family, "Epilogue-Bold", sans-serif);
+  font-size: var(--button-normal-font-size, 16px);
+  line-height: var(--button-normal-line-height, 160%);
+  font-weight: var(--button-normal-font-weight, 700);
+  position: relative;
+}
+.by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy {
+  text-align: left;
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+  position: relative;
+  width: 580px;
+}
+.by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span {
+  color: var(--neutrals-80, #515b6f);
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+}
+.by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span2 {
+  color: var(--brands-primary, #4640de);
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+}
+.by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span3 {
+  color: var(--neutrals-80, #515b6f);
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+}
+.by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy-span4 {
+  color: var(--brands-primary, #4640de);
+  font-family: var(
+    --body-normal-regular-font-family,
+    "Epilogue-Regular",
+    sans-serif
+  );
+  font-size: var(--body-normal-regular-font-size, 16px);
+  line-height: var(--body-normal-regular-line-height, 160%);
+  font-weight: var(--body-normal-regular-font-weight, 400);
+}
+/* Base styles for larger screens */
+.landing-page-submit-application-desktop {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .landing-page-submit-application-desktop {
+    padding: 10px;
+  }
+
+  /* Stack elements vertically and adjust padding/margins for smaller screens */
+  .role, .job-title, .submit-your-application, .textfield, .textfield2 {
+    width: 100%;
+  }
+
+  /* Style text fields and form fields */
+  .input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Adjust spacing */
+  .divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+  }
+
+  /* Make buttons and labels responsive */
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #2a9d8f;
+    color: white;
+    cursor: pointer;
+  }
+
+  .button .caption {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices, e.g., mobile phones */
+@media (max-width: 480px) {
+  .input-fields {
+    gap: 10px;
+  }
+
+  /* Smaller font sizes for mobile */
+  .label, .caption4, .caption5, .attach-your-resume {
+    font-size: 0.9rem;
+  }
+
+  .by-sending-the-request-you-can-confirm-that-you-accept-our-terms-of-service-and-privacy-policy {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}

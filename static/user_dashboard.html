@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./user_dashboard/vars.css">
+  <link rel="stylesheet" href="./user_dashboard/style.css">
+  
+  <style>
+    button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="_2-9-dashboard-application-list">
+    <div class="_2-1-dashboard-applicant">
+      <div class="group-1018">
+        <div class="side-bar-dashboard-applicant">
+          <div class="menu">
+            <div class="logo-2">
+              <div class="frame-3">
+                <div class="ellipse-2"></div>
+                <img class="vector-7" src="user_dashboard/vector-70.svg" />
+                <div class="search">
+                  <img class="iconly-bold-search" src="user_dashboard/iconly-bold-search0.svg" />
+                </div>
+              </div>
+              <div class="job-huntly">JobSphere</div>
+            </div>
+            <div class="main-menu">
+              <div class="menu2">
+                <div class="sidebar-menu"></div>
+                <div class="sidebar-menu2">
+                  <div class="frame-1272">
+                    <img class="icon6" src="user_dashboard/icon5.svg" />
+                    <a class="caption2" onclick="dashboard()" style="text-decoration: none;">Dashboard</a>
+                  </div>
+                </div>
+                <div class="sidebar-menu3">
+                  <div class="icon2">
+                    <img class="search2" src="user_dashboard/search1.svg" />
+                  </div>
+                  <a onclick="findjobs()" class="caption2" style="text-decoration: none;">Find Jobs</a>
+                </div>
+                <div class="sidebar-menu3">
+                  <img class="icon3" src="user_dashboard/icon2.svg" />
+                  <a onclick="profile()" class="caption2" style="text-decoration: none;">My Profile</a>
+                </div>
+              </div>
+              <div class="rectangle-2751"></div>
+              <div class="settings">
+                <div class="frame-1208">
+                  <div class="settings2">SETTINGS</div>
+                </div>
+                <div class="menu3">
+                  <div class="sidebar-menu4">
+                    <img class="icon4" src="user_dashboard/icon3.svg" />
+                    <a onclick="settings()" class="caption2" style="text-decoration: none;">Settings</a>
+                  </div>
+                  <div class="sidebar-menu4">
+                    <img class="icon5" src="user_dashboard/icon4.svg" />
+                    <a href="" class="caption2" style="text-decoration: none;">Help Center</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pattern"></div>
+        </div>
+        <div class="rounded-rectangle"></div>
+        <div class="frame">
+          <div class="logout">
+            <a onclick="logout()" class="logout2" style="text-decoration: none;">Logout</a>
+            <img class="icon7" src="user_dashboard/icon6.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="top-nav">
+          <div class="dashboard">Dashboard</div>
+          <div class="action">
+            <button type="button" onclick="home()" class="caption3 button">Back to homepage</button>
+          </div>
+        </div>
+        <div class="applicant-dashboard-greeting-filter-desktop">
+          <div class="greeting">
+            <div class="good-morning-jake" id="fullname">Good morning, User</div>
+            <div class="here-is-what-s-happening-with-your-job-search-applications-from-july-19-july-25">
+              Here is what’s happening with your job search applications
+            </div>
+          </div>
+        </div>
+        <div class="recent-applications-history">
+          <div class="applicant-dashboard-recent-applications-history-desktop">
+            <div class="base"></div>
+            <div class="data" id="recent-applications-container">
+              <!-- Recent applications will be dynamically appended here -->
+            </div>
+            <div class="line"></div>
+            <div class="recent-applications-history2">
+              Recent Applications History
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetchRecentApplications();
+    });
+
+    async function fetchRecentApplications() {
+      try {
+        const response = await fetch('/recent-applications');
+        const data = await response.json();
+
+        if (response.ok) {
+          // Display the user's fullname dynamically
+          document.getElementById('fullname').textContent = `Good morning, ${data.fullname}`;
+
+          // Get the container for the applications
+          const applicationsContainer = document.getElementById('recent-applications-container');
+          // 1st clearing all contents in container, then add jason array values one by one
+          applicationsContainer.innerHTML = '';
+
+          if (data.applications.length > 0) {
+            data.applications.forEach(application => {
+              const applicationDiv = document.createElement('div');
+              applicationDiv.classList.add('recent-applications-row');
+              applicationDiv.innerHTML = `
+                <div class="title">
+                  <div class="company-logo">
+                    <div class="base2"></div>
+                  </div>
+                  <div class="job-title">
+                    <div class="social-media-assistant">
+                      ${application.jobTitle}
+                    </div>
+                    <div class="company-name-location-job-type">
+                      <div class="nomad">${application.companyName}</div>
+                      <div class="ellipse-4"></div>
+                      <div class="paris-france">${application.location}</div>
+                      <div class="ellipse-5"></div>
+                      <div class="full-time">${application.workType}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-1206">
+                  <div class="label2">
+                    <div class="caption5">${application.status}</div>
+                  </div>
+                </div>
+              `;
+              applicationsContainer.appendChild(applicationDiv);
+            });
+          } else {
+            applicationsContainer.innerHTML = '<p>No recent applications.</p>';
+          }
+        } else {
+          console.error('Error fetching recent applications:', data.error || data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching recent applications:', error);
+      }
+    }
+
+    // Call the function when the page loads
+    window.onload = fetchRecentApplications;
+
+    function findjobs(){
+      window.location.href='/jobs'
+    }
+    function dashboard( ){
+      window.location.href='/dashboard?view=html'
+
+    }
+    function profile(){
+      window.location.href='/userprofile'
+    }
+
+    function logout(){
+      window.location.href='/userLogout'
+    }
+    function home(){
+      window.location.href='/userhome?view=html'
+    }
+    function settings(){
+      window.location.href='/settings?view=html'
+    }
+    
+  </script>
+</body>
+</html>

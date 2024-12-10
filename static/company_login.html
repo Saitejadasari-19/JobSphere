@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./company_login/vars.css">
+  <link rel="stylesheet" href="./company_login/style.css">
+
+  <style>
+    input[type="checkbox"] {
+      width: 15px; 
+      height: 15px; 
+      transform: scale(1.5); 
+      /* -webkit-appearance: none;  */
+      background-color: #fff;
+      border: 2px solid grey;
+      border-radius: 3px; 
+      cursor: pointer; 
+      position: relative; 
+    }
+  
+    input[type="checkbox"]:checked {
+      background-color: blueviolet; 
+    }
+  
+    input[type="checkbox"]:checked::after {
+      content: '✔'; 
+      position: absolute;
+      left: 2px; 
+      top: -1px; 
+      font-size: 10px; 
+      color: white; 
+    }
+  
+    input[type="checkbox"]:hover {
+      border-color: blueviolet;
+    }
+    button{
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div class="user-login">
+  <div class="landing-page-login-desktop">
+    <div class="frame-1284">
+      <div class="sign-up-options">
+        
+          <button type="button" onclick="route()" class="caption tab-menu">Job Seeker</button>
+        
+        <div class="tab-menu2">
+          <div class="caption2">Company</div>
+        </div>
+      </div>
+      <div class="welcome-back-dude">Welcome Back!</div>
+      <!-- <div class="button">
+        <img class="icon" src="company_login/icon0.svg" />
+        <div class="caption3">Login with google</div>
+      </div> -->
+    </div>
+    <!-- <div class="or-sign-up-with-email">
+      <div class="line"></div>
+      <div class="line2"></div>
+      <div class="or-login-with-email">Or login with email</div>
+    </div> -->
+
+    <form class="forms" action="" method="post">
+      <div class="textfield">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" class="input this-is-placeholder" placeholder="Enter email address" required />
+      </div>
+      <div class="textfield">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="input this-is-placeholder" placeholder="Enter password" required />
+      </div>
+      <!-- <div class="remember-me">
+        <label class="checkbox">
+          <input type="checkbox" name="remember" />
+          <span class="caption4">Remember me</span>
+        </label>
+      </div> -->
+      <button type="submit" class="button2 caption5" onclick="login(event)">Login
+      </button>
+    </form>
+    
+
+    <div class="already-have-an-account">
+      <div class="don-t-have-an-account">Don’t have an account?</div>
+      <div class="sign-up" onclick="route2()" text-decoration: none;">Sign Up</div>
+    </div>
+  </div>
+  <div class="rectangle"></div>
+  <div class="frame-3">
+    <div class="ellipse-2"></div>
+    <img class="vector-7" src="company_login/vector-70.svg" />
+    <div class="search">
+      <img class="iconly-bold-search" src="company_login/iconly-bold-search0.svg" />
+    </div>
+  </div>
+  <div class="job-sphere">JobSphere</div>
+</div>
+
+<script>
+  function route()
+  {
+    window.location.href='/userLogin?view=html';
+  }
+
+  function route2()
+  {
+    window.location.href='/companysignup?view=html';
+  }
+
+
+  function login(event){
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    console.log(email);
+
+    const userData={
+      email:email,
+      password:password
+    };
+
+    fetch('/companylogin',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    })
+    .then(response=>response.json())
+    .then(data => {
+      if(data.success){
+        window.location.href='/companyhome?view=html';
+        
+    }else{
+      alert('Login failed:' +data.error);
+    }
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error during login: ',error);
+
+  });
+
+}
+</script>
+
+</body>
+</html>
+
