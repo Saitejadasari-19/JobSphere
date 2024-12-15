@@ -10,7 +10,6 @@ app.secret_key = 'ItsaSecret'
 db = SQLAlchemy(app)
 
 
-
 @app.route('/userSignup', methods=['GET','POST'])
 def usersignup():
     if request.args.get('view') == 'html':
@@ -149,38 +148,59 @@ def company_profile():
 #userHome page
 @app.route('/userhome')
 def userHome():
-    if request.args.get('view') == 'html':
-        return send_from_directory('static','user_home.html')
+    try:
+        if session['userId'] and request.args.get('view') == 'html':
+            return send_from_directory('static','user_home.html')
+    except:
+        return send_from_directory('static','user_login.html')
 
 #companyProfile page
 @app.route('/companyhome',methods=['GET'])
 def companyhome():
-    if request.args.get('view') == 'html':
-        return send_from_directory('static','company_profile.html')
-    
+    try:
+        if session['userId'] and request.args.get('view') == 'html':
+            return send_from_directory('static','company_profile.html')
+    except:
+        return send_from_directory('static','company_login.html')
+
 @app.route('/userprofile', methods=['GET'])
 def userprofile():
-    return send_from_directory('static','user_profile.html')
-
+    try:
+        if session['userId']:
+            return send_from_directory('static','user_profile.html')
+    except:
+        return send_from_directory('static','user_login.html')
+    
 @app.route('/dashboard',methods=['GET'])
 def dashboard():
-    if request.args.get('view') == 'html':
-        return send_from_directory('static','user_dashboard.html')
+    try:
+        if session['userId'] and request.args.get('view') == 'html':
+            return send_from_directory('static','user_dashboard.html')
+    except:
+        return send_from_directory('static','user_login.html')
 
 @app.route('/settings',methods=['GET'])
 def settings():
-    if request.args.get('view') == 'html':
-        return send_from_directory('static','user_setting.html')
+    try:
+        if session['userId'] and request.args.get('view') == 'html':
+            return send_from_directory('static','user_setting.html')
+    except:
+        return send_from_directory('static','user_login.html')
     
 
 @app.route('/companyapplicantlist/<int:jobId>',methods=['GET'])
 def companyApplicantlist(jobId):
-        return send_from_directory('static','company_applicantslist.html')
+    try:
+        if session['userId']:
+            return send_from_directory('static','company_applicantslist.html')
+    except:
+        return send_from_directory('static','company_login.html')
     
 @app.route('/userLogout',methods=['GET'])
 def userlogout():
     session.clear()
     return send_from_directory('static','user_login.html')
+
 @app.route('/companylogout',methods=['GET'])
 def companylogout():
     session.clear()
@@ -188,8 +208,12 @@ def companylogout():
 
 @app.route('/applicantprofile/<username>',methods=['GET','POST'])
 def applicantprofile(username):
-    return send_from_directory('static','company_applicantprofile.html')
-
+    try:
+        if session['userId']:
+            return send_from_directory('static','company_applicantprofile.html')
+    except:
+        return send_from_directory('static','company_login.html')    
+    
 @app.route('/apply/api/<int:job_id>', methods=['GET'])
 def get_job(job_id):
     job = jobs.query.filter_by(jobId=job_id).first()
@@ -335,7 +359,7 @@ def applicants_list(jobId):
             applicant_info = {
                 'fullname': user.fullname,
                 'status': application.status,
-                'portfolio': application.portfolio,  # Add other fields if needed
+                'portfolio': application.portfolio,
                 'userId': user.userId
             }
             applicant_list.append(applicant_info)
@@ -348,10 +372,9 @@ def applicants_list(jobId):
         'applicants': applicant_list
     })
 
-#for user dashboard 
+# For user dashboard 
 @app.route('/recent-applications', methods=['GET'])
 def recent_applications():
-    # Get userId from session (assumed that userId is stored in session upon login)
     user_id = session['userId']
     if not user_id:
         return jsonify({"error": "User not logged in."}), 401
@@ -390,7 +413,7 @@ def recent_applications():
 
 
 
-#for user home
+# For user home
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():
     id = session['userId']
@@ -409,7 +432,7 @@ def get_jobs():
 @app.route('/api/profile', methods=['GET'])
 def get_user_profile():
     user_id = session['userId']  # Get the user's ID from the session
-    user_data = Profile.query.filter_by(userId=user_id).first()  # Replace with function to retrieve user data
+    user_data = Profile.query.filter_by(userId=user_id).first() 
 
     if not user_data:
         return jsonify({"message": "User not found"}), 404
@@ -420,7 +443,7 @@ def get_user_profile():
 
 @app.route('/api/applicant/<username>',methods=['GET'])
 def applicantDetails(username):
-    user_data = Profile.query.filter_by(userId=username).first()  # Replace with function to retrieve user data
+    user_data = Profile.query.filter_by(userId=username).first()  
 
     if not user_data:
         return jsonify({"message": "User not found"}), 404
