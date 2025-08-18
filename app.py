@@ -16,6 +16,26 @@ def usersignup():
         return send_from_directory('static','user_signup.html')
     else:
         data = request.get_json()
+
+        # Input validation code
+        if not data or not all(key in data for key in ('username', 'password', 'email', 'fullname')):
+            return jsonify({'error': 'Missing required fields'}), 400
+
+        if not data['username']:
+            return jsonify({'error': 'Username cannot be empty'}), 400
+        if not data['password']:
+            return jsonify({'error': 'Password cannot be empty'}), 400
+        if not data['email']:
+            return jsonify({'error': 'Email cannot be empty'}), 400
+        if not data['fullname']:
+            return jsonify({'error': 'Full name cannot be empty'}), 400
+
+        # Basic email format validation
+        import re
+        if not re.match(r'[^@]+@[^@]+\.[^@]+', data['email']):
+            return jsonify({'error': 'Invalid email format'}), 400
+        # End of input validation code
+
         username = data.get('username')
         password = data.get('password')
         email = data.get('email')
@@ -41,6 +61,26 @@ def companysignup():
         return send_from_directory('static','company_signup.html')
     
     data = request.get_json()
+
+    # Input validation code
+    if not data or not all(key in data for key in ('username', 'password', 'email', 'fullname')):
+        return jsonify({'error': 'Missing required fields'}), 400
+
+    if not data['username']:
+        return jsonify({'error': 'Username cannot be empty'}), 400
+    if not data['password']:
+        return jsonify({'error': 'Password cannot be empty'}), 400
+    if not data['email']:
+        return jsonify({'error': 'Email cannot be empty'}), 400
+    if not data['fullname']:
+        return jsonify({'error': 'Full name cannot be empty'}), 400
+
+    # Basic email format validation
+    import re
+    if not re.match(r'[^@]+@[^@]+\.[^@]+', data['email']):
+        return jsonify({'error': 'Invalid email format'}), 400
+    # End of input validation code
+
     username = data.get('username')
     password = data.get('password')
     email = data.get('email')
@@ -65,6 +105,10 @@ def userlogin():
         return send_from_directory('static','user_login.html')
     else:
         data = request.json
+        if not data['email']:
+            return jsonify({'error': 'Email cannot be empty'}), 400
+        if not data['password']:
+            return jsonify({'error': 'Password cannot be empty'}), 400
         email = data.get('email')
         password = data.get('password')
         user = User.query.filter_by(email=email).first()
@@ -458,6 +502,8 @@ def save_profile():
     data = request.get_json()  # Get the JSON data from the request
 
     try:
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
         
         userId = session['userId'] 
         name = session['fullname']
