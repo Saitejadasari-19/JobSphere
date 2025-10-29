@@ -814,4 +814,6 @@ with app.app_context():
     # db.session.commit()
 
 
-app.run(debug=True)
+if __name__ == "__main__":
+    # Only run the dev server when executed directly
+    app.run(debug=True)
